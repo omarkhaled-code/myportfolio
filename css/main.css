@@ -1,0 +1,547 @@
+/** @format */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+body html {
+  overflow-x: hidden;
+}
+
+:root {
+  --main-color: #00bcd4;
+  --text-color: white;
+  --bg-color: #2f363e;
+}
+
+body {
+  font-family: Tahoma;
+  width: 100%;
+  background-color: var(--bg-color);
+}
+
+/* Start Navbar */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 80px;
+  box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+  z-index: 2;
+}
+
+.links {
+  top: 100px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+  left: 0;
+  width: 100%;
+}
+.links a {
+  font-weight: bold;
+  color: var(--text-color);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.links span {
+  left: -15px;
+  position: absolute;
+  background: var(--main-color);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.links i {
+  font-size: 25px;
+  transition: 0.3s;
+  cursor: pointer;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.links i:hover {
+  color: #00bcd4;
+}
+
+.links h5 {
+  padding: 2px 13px;
+  display: none;
+  position: absolute;
+  left: 90px;
+  margin: 10px auto;
+  background-color: var(--main-color);
+  color: var(--text-color);
+  border-radius: 20px;
+  transition: 0.5s;
+}
+.links h5::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.links a:hover i {
+  color: var(--main-color);
+}
+.links a:hover h5 {
+  display: block;
+}
+
+.links a.active {
+  left: 40px;
+  position: relative;
+  color: white;
+}
+.links a.active::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: -24px;
+  width: 75px;
+  height: 75px;
+  background-color: var(--main-color);
+  z-index: -1;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px var(--main-color);
+}
+.links a.active::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: -14px;
+  width: 55px;
+  height: 55px;
+  background-color: var(--bg-color);
+  z-index: -1;
+  border-radius: 50%;
+  box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+
+.main,
+.about,
+.home,
+.contact {
+  position: absolute;
+  width: calc(100% - 80px);
+  left: 80px;
+  top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+}
+
+.main {
+  flex-direction: column;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .router-link-exact-active {
+    left: 30px;
+  }
+  .router-link-exact-active::before {
+    left: 9px;
+    top: -20px;
+    width: 60px;
+    height: 60px;
+  }
+  .router-link-exact-active::after {
+    left: 14px;
+    top: -14px;
+    width: 50px;
+    height: 50px;
+  }
+  .links i {
+    font-size: 20px;
+  }
+}
+/* Start Project Section  */
+.main .categorey {
+  font-size: 30px;
+  color: white;
+  margin: 0 auto 25px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 1s;
+  border-radius: 20px;
+}
+@media (max-width: 767px) {
+  .main .categorey {
+    font-size: 20px;
+  }
+}
+.main .categorey:hover {
+  color: var(--bg-color);
+  background-color: white;
+}
+
+.main .container {
+  width: 85%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  padding-bottom: 50px;
+}
+.main .box {
+  width: 350px;
+  height: 300px;
+  background-color: #ccc;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  border-top-right-radius: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+  background: #353f4b;
+}
+.imgs {
+  width: 90%;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.main .box img {
+  width: 120px;
+  height: 100px;
+  object-fit: fill;
+}
+@media (max-width: 767px) {
+  .main .box img {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (max-width: 991px) {
+  .main .box img {
+    width: 80px;
+    height: 80px;
+  }
+}
+.main .box .data {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.main .box .data button {
+  background-color: transparent;
+  border: none;
+  transition: 0.3s;
+}
+.main .box .data button a {
+  padding: 10px 25px;
+  height: fit-content;
+  border: none;
+  color: white;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.main .box .data button:hover a {
+  position: relative;
+  bottom: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
+.main .box .data span {
+  color: #eee;
+  font-size: 15px;
+}
+@media (max-width: 991px) {
+  .main .container {
+    grid-template-columns: repeat(auto-fill, minmax(212px, 1fr));
+  }
+  .main .box {
+    width: 250px;
+    height: 290px;
+  }
+  .main .box .data button {
+    padding: 6px 15px;
+  }
+  .main .box .data span {
+    font-size: 14px;
+  }
+}
+@media (max-width: 385px) {
+  .main .box {
+    width: 200px;
+    height: 240px;
+  }
+  .main .box .data span {
+    display: none;
+  }
+}
+
+.title {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 15px;
+  width: 50%;
+  margin: 0 auto;
+  transition: 0.5s;
+}
+.hover {
+  cursor: pointer;
+}
+.hover:hover .title {
+  color: #00bcd4;
+  background-color: white;
+}
+.hover .data {
+  margin: 20px auto;
+}
+.hover .imgs {
+  height: 25%;
+}
+
+/* End Project Section  */
+
+/* Start About Section  */
+.about .container {
+  width: 90%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  top: 0;
+}
+.about .over-view {
+  background-color: #353f4b;
+  border-radius: 10px;
+  display: flex;
+}
+
+.about .over-view .avatar-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 30px;
+  position: relative;
+  width: 90%;
+  text-align: center;
+}
+.about .over-view .avatar-box::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 65%;
+  background-color: #eee;
+}
+.about .over-view .avatar-box img {
+  width: 200px;
+  height: 250px;
+  border-radius: 10%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.about .over-view .avatar-box h3 {
+  color: black;
+  font-weight: bold;
+  font-size: 25px;
+}
+.about .over-view .avatar-box .genre {
+  color: var(--main-color);
+}
+.about .over-view .avatar-box .genre,
+.about .over-view .avatar-box span {
+  font-size: 14px;
+  font-weight: bold;
+}
+.about .over-view .avatar-box span {
+  color: #737272;
+}
+.about .over-view .avatar-box span.progress {
+  width: 100px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: #eee;
+  position: relative;
+}
+.about .over-view .avatar-box span.progress::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 85%;
+  background-color: var(--main-color);
+  height: 5px;
+  border-radius: 10px;
+}
+.about .over-view .avatar-box i {
+  color: orange;
+}
+.about .over-view .information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.about .over-view .information .box {
+  padding: 15px 20px;
+  width: 100%;
+}
+.about .over-view .information .box:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+h4 {
+  color: rgb(10, 10, 10);
+  margin-bottom: 15px;
+}
+.about .over-view .information .box .info {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  color: #737272;
+}
+.about .over-view .information .box .info span {
+  color: var(--main-color);
+  padding-left: 5px;
+  font-weight: bold;
+}
+.about .container .other-data {
+  display: flex;
+  margin: 20px 0;
+}
+.about .container .other-data .skills-card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #353f4b;
+  padding: 30px;
+  border-radius: 10px;
+}
+.about .container .other-data .skills-card p {
+  color: var(--main-color);
+}
+.about .container .other-data .skills-card ul {
+  list-style: none;
+}
+.about .container .other-data .skills-card ul li {
+  padding: 10px 0;
+}
+.about .container .other-data .skills-card ul li:not(:last-child) {
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--bg-color);
+}
+.about .container .other-data .skills-card ul li span {
+  margin-right: 10px;
+  background: #eee;
+  padding: 3px 6px;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #777;
+}
+
+@media (max-width: 767px) {
+  .about .over-view {
+    flex-direction: column;
+  }
+  .about .over-view .avatar-box::after {
+    width: 65%;
+    height: 1px;
+    bottom: 0;
+    top: auto;
+    right: auto;
+  }
+  .about .over-view .information .box .info span {
+    font-size: 14px;
+  }
+  .about .container .other-data .skills-card {
+    padding: 20px;
+  }
+  .about .container .other-data .skills-card ul li span {
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 340px) {
+  .about .over-view .avatar-box h3 {
+    font-size: 20px;
+  }
+  .about .over-view .avatar-box .genre,
+  .about .over-view .avatar-box span {
+    font-size: 12px;
+  }
+  .about .over-view .avatar-box {
+    font-size: 14px;
+  }
+  .about .over-view .information .box .info span {
+    font-size: 10px;
+    font-weight: normal;
+  }
+}
+/* End About Section  */
+
+/* Start Component Websites */
+
+.websites {
+  display: flex;
+  flex-direction: column;
+}
+.websites .main {
+  top: 100px;
+}
+.webimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+}
+.webimg img {
+  width: 50px;
+  height: 50px;
+}
+.websites .main .box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main .box .img img,
+.main .box .video video {
+  width: 100%;
+  height: 100%;
+}
+.main .box .img img.mini-img {
+  width: 102%;
+}
+.main .box .data h3 {
+  color: white;
+  font-size: 16px;
+}
+
+/* End Component Websites */

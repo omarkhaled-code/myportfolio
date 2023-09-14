@@ -1,0 +1,179 @@
+/** @format */
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+.home {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 20px;
+  left: 200px;
+  width: calc(100% - 200px);
+  padding-bottom: 50px;
+}
+.home .box {
+  background-color: #353f4b;
+  padding: 20px;
+  overflow: hidden;
+  width: 450px;
+  height: 320px;
+  border-radius: 10px;
+}
+
+.home .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.home .box .head img {
+  width: 150px;
+}
+.home .box .head .welcome h2 {
+  color: #fff;
+}
+.home .box .head .welcome span {
+  color: #000;
+}
+.home .info {
+  margin: 20px auto;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+.home .info h4 {
+  color: #00bcd4;
+}
+.home .button {
+  display: flex;
+  justify-content: end;
+  transform: translateY(10px);
+  height: 40px;
+}
+.home .button .btn {
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+.home .button .btn:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 10px #232c36;
+}
+.home .button .btn a {
+  padding: 15px;
+  text-decoration: none;
+}
+
+.home .social {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 10px 0;
+}
+
+.home .social div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 15px;
+  margin: 5px auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.home .social div:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 5px 10px rgb(27 30 35);
+}
+.home .social div h4 {
+  margin: 0;
+  color: white;
+}
+.home .social img.small {
+  width: 35px;
+  height: 30px;
+  border-radius: 50%;
+}
+.home .social .facebook {
+  background: #3b5998;
+}
+.home .social .instgram {
+  background: linear-gradient(0deg, #fbd326, #961cb6);
+}
+.home .social .linkedin {
+  background-color: #0077b5;
+}
+.home .social .github {
+  background-color: white;
+}
+.home .social .github h4 {
+  color: black;
+}
+
+@media (max-width: 1150px) {
+  .home {
+    left: 145px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+  .home .box {
+    width: 400px;
+  }
+}
+@media (max-width: 767px) {
+  .home .box {
+    width: 350px;
+  }
+  .home .box .button {
+    height: 35px;
+  }
+}
+@media (max-width: 500px) {
+  .home {
+    left: 200px;
+  }
+  .home .box {
+    width: 260px !important;
+  }
+  .home .box .head img {
+    display: none;
+  }
+  .home .head .welcome {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .home .box .button {
+    height: 35px;
+  }
+}
+
+@media (max-width: 330px) {
+  .home {
+    left: 260px;
+    width: calc(100% - 265px);
+  }
+  .home .box {
+    width: 200px !important;
+    height: 260px;
+  }
+  .home .social-box {
+    height: 320px;
+  }
+
+  .home .info h4,
+  .home .info span {
+    font-size: 10px;
+  }
+  .home .social-box h2 {
+    font-size: 15px;
+  }
+}
